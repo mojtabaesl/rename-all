@@ -2,7 +2,7 @@ const fs = require('fs');
 
 let pathExists = path => {
   return new Promise((resolve, reject) => {
-    fs.stat(path, (err, states) => {
+    fs.access(path, err => {
       if (err) reject(err.message);
       resolve();
     });

@@ -1,6 +1,6 @@
 const yargs = require('yargs');
 
-const { renameAll } = require('./rename');
+const { renameAll } = require('./app/rename');
 
 const argv = yargs
   .command('rename', 'rename all files in a directory', {

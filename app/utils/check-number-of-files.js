@@ -4,7 +4,7 @@ let checkNumberOfFiles = (numberOfNames, numberOfFiles) => {
       resolve();
     } else {
       reject(
-        'ERROR: The number of files in your dir and the nemes that you provided in "info.json" are not equal'
+        'ERROR: The number of files in your dir and the nemes that you provided in "input/info.json" are not equal'
       );
     }
   });

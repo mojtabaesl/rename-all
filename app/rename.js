@@ -1,11 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 
-const info = require('./input/info.json');
-const { pathExists } = require('./utils/pathExists');
-const { checkNamesArray } = require('./utils/checkNamesArray');
-const { readDir } = require('./utils/readDirectory');
-const { checkNumberOfFiles } = require('./utils/checkNumberOfFiles');
+const info = require('./../input/info.json');
+const { pathExists } = require('./utils/path-exists');
+const { checkNamesArray } = require('./utils/check-names-array');
+const { readDir } = require('./utils/read-directory');
+const { checkNumberOfFiles } = require('./utils/check-number-of-files');
 
 let renameAll = async (pathToDir, sortType) => {
   try {
@@ -27,8 +27,8 @@ let renameAll = async (pathToDir, sortType) => {
       const file = files[i];
       const fileExtension = path.extname(file);
       fs.rename(
-        pathToDir + '\\' + file,
-        pathToDir + '\\' + newName + fileExtension,
+        pathToDir + path.sep + file,
+        pathToDir + path.sep + newName + fileExtension,
         err => {
           if (err) throw new Error(err);
         }
